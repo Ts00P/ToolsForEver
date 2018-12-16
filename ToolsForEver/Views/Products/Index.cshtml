@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ToolsForEver.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+
+<form>
+    <div class="form-group">
+        @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+        {
+            <label>Product:</label>
+            <input name="searchProduct" type="text" class="form-control" placeholder="Zoek op Product">
+            <br>
+            <button type="submit" id="btn_zoeken" class="btn btn-primary">Zoeken</button>
+        }
+    </div>
+</form>
+
+<br/>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Buy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Factory.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sell)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Factory.Name)
+            </td>
+            <td>
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Index", "Supplies", new { id = item.Id })'">Voorraad</button>
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Edit", "Products", new { id = item.Id })'">Wijzig</button>
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Details", "Products", new { id = item.Id })'">Details</button>
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Delete", "Products", new { id = item.Id })'">Verwijder</button>
+            </td>
+        </tr>
+    }
+
+</table>

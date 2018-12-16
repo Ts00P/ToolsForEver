@@ -1,0 +1,73 @@
+﻿@model ToolsForEver.Models.EmployeeViewModel
+@{
+    ViewBag.Title = "Buiten gebruik stellen";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmployeeViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Middlename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Middlename)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @using (Html.BeginForm("LockAccount", "Employee", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.Hidden("id", Model.ID)
+        if (!Model.IsLockedOut)
+        {
+            @Html.Hidden("userLockoutState", true)
+            <button type="submit" class="btn btn-danger">Gebruiker buiten gebruik stellen <i class="fas fa-user-minus"></i></button>
+        }
+        else
+        {
+            @Html.Hidden("userLockoutState", false)
+            <button type="submit" class="btn btn-success">Gebruiker in gebruik stellen <i class="fas fa-user-plus"></i></button>
+        }
+    }
+</p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

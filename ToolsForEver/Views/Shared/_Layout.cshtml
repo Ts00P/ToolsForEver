@@ -24,6 +24,17 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (User.IsInRole("Employee"))
+                    {
+                        <li>@Html.ActionLink("Factories", "Index", "Factories")</li>
+                        <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                        <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                        <li>@Html.ActionLink("Supplies", "Index", "Supplies")</li>
+                    }
+                    else if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Employees", "Index", "Employee")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

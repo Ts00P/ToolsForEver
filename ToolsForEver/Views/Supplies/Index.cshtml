@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ToolsForEver.Models.Supply>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Voorraad</h2>
+
+<form>
+    <div class="form-group">
+        @using (Html.BeginForm("Index", "Supplies", FormMethod.Get))
+        {
+            <input name="searchLocation" type="text" class="form-control" placeholder="Zoek op Locatie">
+            <br>
+            <button type="submit" id="btn_zoeken" class="btn btn-primary">Zoeken</button>
+        }
+    </div>
+</form>
+
+<br/>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            Locatie
+        </th>
+        <th>
+            Product
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { locationId = item.LocatieId, productId = item.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { locationId = item.LocatieId, productId = item.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { locationId = item.LocatieId, productId = item.ProductId })
+        </td>
+    </tr>
+}
+
+</table>
