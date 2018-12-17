@@ -249,13 +249,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\codropsicons\codropsicons.svg" />
-    <Content Include="fonts\codropsicons\license.txt" />
-    <Content Include="fonts\ecoicons\ecoicons.dev.svg" />
-    <Content Include="fonts\ecoicons\ecoicons.svg" />
-    <Content Include="fonts\ecoicons\license.txt" />
-    <Content Include="fonts\ecoicons\Read Me.txt" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\toolsforeverData.Context.tt">
@@ -277,13 +270,9 @@
     <Content Include="Models\toolsforeverData.edmx.diagram">
       <DependentUpon>toolsforeverData.edmx</DependentUpon>
     </Content>
-    <Content Include="fonts\codropsicons\.DS_Store" />
-    <Content Include="fonts\codropsicons\codropsicons.eot" />
-    <Content Include="fonts\codropsicons\codropsicons.ttf" />
-    <Content Include="fonts\codropsicons\codropsicons.woff" />
-    <Content Include="fonts\ecoicons\ecoicons.eot" />
-    <Content Include="fonts\ecoicons\ecoicons.ttf" />
-    <Content Include="fonts\ecoicons\ecoicons.woff" />
+    <None Include="Properties\PublishProfiles\teunst.a2hosted.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\toolsforever.a2hosted.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\toolsforever.a2hosted.com - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -352,6 +341,7 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\LockAccount.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -36,5 +36,7 @@ namespace ToolsForEver.Models
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Supply> Supplies { get; set; }
+
+        public System.Data.Entity.DbSet<ToolsForEver.Models.EmployeeEditModel> EmployeeEditModels { get; set; }
     }
 }
