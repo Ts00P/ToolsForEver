@@ -271,6 +271,7 @@
       <DependentUpon>toolsforeverData.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\teunst.a2hosted.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\tools4ever.a2hosted.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\toolsforever.a2hosted.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\toolsforever.a2hosted.com - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
