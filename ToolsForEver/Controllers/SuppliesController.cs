@@ -16,7 +16,7 @@ namespace ToolsForEver.Controllers
         private teunstah_toolsforeverEntities db = new teunstah_toolsforeverEntities();
 
         // GET: Supplies
-        public ActionResult Index(int? id, string searchLocation)
+        public ActionResult Index(int? id, string searchLocation, int? searchProduct)
         {
             var supplies = db.Supplies.Include(s => s.Location).Include(s => s.Product);
 
@@ -28,6 +28,13 @@ namespace ToolsForEver.Controllers
             if (!string.IsNullOrEmpty(searchLocation)){
                 supplies = db.Supplies.Include(s => s.Location).Include(s => s.Product).Where(f => f.Location.Name.Contains(searchLocation));
             }
+
+            //Ticket 104
+            if (searchProduct != null)
+            {
+                supplies = db.Supplies.Where(x => x.Amount < searchProduct);
+            }
+
             return View(supplies.ToList());
         }
 

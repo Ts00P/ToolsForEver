@@ -42,6 +42,10 @@ namespace ToolsForEver.Models
         [Display(Name = "Voorvoegsels")]
         public string Middlename { get; set; }
 
+        [DataType(DataType.Text)]
+        [Display(Name = "Provincie")]
+        public string District { get; set; }
+
         [Display(Name = "Is buiten gebruik")]
         public bool IsLockedOut { get; set; }
     }

@@ -16,6 +16,17 @@
         }
     </div>
 </form>
+<!--Ticket 104-->
+<form>
+    <div class="form-group">
+        @using (Html.BeginForm("Index", "Supplies", FormMethod.Get))
+        {
+            <input name="searchProduct" type="number" class="form-control" placeholder="Zoek op minimum voorraad">
+            <br>
+            <button type="submit" id="btn_zoeken" class="btn btn-primary">Zoeken</button>
+        }
+    </div>
+</form>
 
 <br/>
 <p>

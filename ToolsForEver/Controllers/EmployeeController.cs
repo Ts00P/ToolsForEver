@@ -56,6 +56,8 @@ namespace ToolsForEver.Controllers
                 Firstname = x.Firstname,
                 Lastname = x.Lastname,
                 Middlename = x.Middlename,
+                // Ticket 103
+                District = x.District,
                 IsLockedOut = UserManager.IsLockedOut(x.Id)
 
             });
@@ -90,7 +92,9 @@ namespace ToolsForEver.Controllers
                         Email = model.Email,
                         Firstname = model.Firstname,
                         Lastname = model.Lastname,
-                        Middlename = model.Middlename
+                        Middlename = model.Middlename,
+                        // Ticket 103
+                        District = model.District
                     };
 
                     db.Employees.Add(employee);
@@ -125,6 +129,8 @@ namespace ToolsForEver.Controllers
                 Firstname = employee.Firstname,
                 Lastname = employee.Lastname,
                 Middlename = employee.Middlename,
+                // Ticket 103
+                District = employee.District,
                 IsLockedOut = isLockedOut
             };
 
@@ -169,7 +175,9 @@ namespace ToolsForEver.Controllers
             {
                 Firstname = employee.Firstname,
                 Lastname = employee.Lastname,
-                Middlename = employee.Middlename
+                Middlename = employee.Middlename,
+                // Ticket 103
+                District = employee.District
             };
 
             return View(model);
@@ -185,6 +193,8 @@ namespace ToolsForEver.Controllers
                 employee.Firstname = model.Firstname;
                 employee.Lastname = model.Lastname;
                 employee.Middlename = model.Middlename;
+                // Ticket 103
+                employee.District = model.District;
 
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();

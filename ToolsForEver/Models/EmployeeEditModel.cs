@@ -24,5 +24,9 @@ namespace ToolsForEver.Models
         [DataType(DataType.Text)]
         [Display(Name = "Voorvoegsels")]
         public string Middlename { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Provincie")]
+        public string District { get; set; }
     }
 }

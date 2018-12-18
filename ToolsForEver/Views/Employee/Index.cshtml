@@ -29,6 +29,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Middlename)
         </th>
+        <!--Ticket 103-->
+        <th>
+            @Html.DisplayNameFor(model => model.District)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.IsLockedOut)
         </th>
@@ -55,13 +59,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.Middlename)
         </td>
+        <!--Ticket 103-->
+        <td>
+            @Html.DisplayFor(modelItem => item.District)
+        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.IsLockedOut)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Buiten gebruik stellen", "LockAccount", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Buiten gebruik stellen", "LockAccount", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

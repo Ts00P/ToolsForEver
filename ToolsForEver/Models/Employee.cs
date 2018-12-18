@@ -19,6 +19,7 @@ namespace ToolsForEver.Models
         public string Middlename { get; set; }
         public string Lastname { get; set; }
         public string Email { get; set; }
+        public string District { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
     }
